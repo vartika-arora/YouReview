@@ -2,8 +2,15 @@ class ReviewsController < ApplicationController
   before_action :find_book
   before_action :find_review, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
+  
   def new
-    @review = Review.new
+    if current_user 
+      @review = Review.where(user_id: current_user.id, book_id: params[:book_id]).first_or_initialize 
+      if @review.id.present? 
+        flash[:notice] = "You can't review a book more than once!"
+        redirect_to book_path(@book)
+      end 
+    end 
   end
 
   def create
