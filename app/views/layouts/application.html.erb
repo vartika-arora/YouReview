@@ -15,7 +15,7 @@
           <%= link_to "Book Review", root_path, class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-nav">
-          <% if ((user_signed_in?)==false) %>
+          <% if (user_signed_in?)==false %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <% end %>
           <% if user_signed_in? %>
