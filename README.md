@@ -1,6 +1,6 @@
 # YouReview
 
-This is a basic application to see book reviews, ratings and introduction.
+You can view reviews, ratings and introduction of books using this app.
 
 ## Running the app
 1. Clone the app and run `bundle install` .
