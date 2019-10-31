@@ -22,3 +22,8 @@ config/application.yml
 # Ignore Sqlite DB
 db/*.sqlite3
 
+# Ignore image files attachments
+/public/system
+
+.DS_Store
+.idea/
